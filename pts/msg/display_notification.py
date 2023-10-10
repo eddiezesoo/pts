@@ -36,3 +36,27 @@ def warning(title, message):
             'type': 'warning',
         }
     }
+
+def warning_tip(message):
+    return {
+        'type': 'ir.actions.client',
+        'tag': 'display_notification',
+        'params': {
+            'title': '提示',
+            'message': message,
+            'sticky': False,  # True 手动关闭   False 延时关闭
+            'type': 'warning',
+        }
+    }
+
+def danger_tip(message):
+    return {
+        'type': 'ir.actions.client',
+        'tag': 'display_notification',
+        'params': {
+            'title': '提示',
+            'message': message,
+            'sticky': False,  # True 手动关闭   False 延时关闭
+            'type': 'danger',
+        }
+    }
