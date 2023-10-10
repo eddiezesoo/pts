@@ -15,7 +15,7 @@ pts/html/__init__.py
 pts/html/element.py
 pts/html/element_test.py
 pts/msg/__init__.py
-pts/msg/notification.py
+pts/msg/display_notification.py
 pts/qr_code/__init__.py
 pts/qr_code/qr_code.py
 pts/sn/__init__.py
