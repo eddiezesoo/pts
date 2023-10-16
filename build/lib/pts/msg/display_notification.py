@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Author zhuangyisheng@qq.com 2023/10/10
 
-def success(message=None, title='提示'):
+def success(title, message):
     return {
         'type': 'ir.actions.client',
         'tag': 'display_notification',
@@ -13,8 +13,7 @@ def success(message=None, title='提示'):
         }
     }
 
-
-def danger(message=None, title='提示'):
+def danger(title, message):
     return {
         'type': 'ir.actions.client',
         'tag': 'display_notification',
@@ -26,8 +25,7 @@ def danger(message=None, title='提示'):
         }
     }
 
-
-def warning(message=None, title='提示'):
+def warning(title, message):
     return {
         'type': 'ir.actions.client',
         'tag': 'display_notification',
@@ -39,10 +37,26 @@ def warning(message=None, title='提示'):
         }
     }
 
-
 def warning_tip(message):
-    return warning(message)
-
+    return {
+        'type': 'ir.actions.client',
+        'tag': 'display_notification',
+        'params': {
+            'title': '提示',
+            'message': message,
+            'sticky': False,  # True 手动关闭   False 延时关闭
+            'type': 'warning',
+        }
+    }
 
 def danger_tip(message):
-    return danger(message)
+    return {
+        'type': 'ir.actions.client',
+        'tag': 'display_notification',
+        'params': {
+            'title': '提示',
+            'message': message,
+            'sticky': False,  # True 手动关闭   False 延时关闭
+            'type': 'danger',
+        }
+    }

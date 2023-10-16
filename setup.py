@@ -4,7 +4,7 @@
 from setuptools import setup, find_packages
 
 setup(name='pts',
-      version='1.0.7',
+      version='1.0.8',
       description='py tools by zesoo',
       author='zesoo',
       author_email='zhuangyisheng@qq.com',
