@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Author zhuangyisheng@qq.com 2023/10/10
 
-def notify(message, title, msg_type, close):
+def notify(message, title, msg_type, close, next_act):
     msg = {
         'type': 'ir.actions.client',
         'tag': 'display_notification',
@@ -15,18 +15,21 @@ def notify(message, title, msg_type, close):
     if close:
         # 后续关闭动作，可以是其他动作
         msg.get('params').update({'next': {'type': 'ir.actions.act_window_close'}})
+    if next_act:
+        # 后续关闭动作，可以是其他动作
+        msg.get('params').update({'next': next_act})
     return msg
 
-def success(message=None, title='提示', close=False):
-    return notify(message, title, 'success', close)
+def success(message=None, title='提示', close=False, next_act=None):
+    return notify(message, title, 'success', close, next_act)
 
 
-def danger(message=None, title='提示', close=False):
-    return notify(message, title, 'danger', close)
+def danger(message=None, title='提示', close=False, next_act=None):
+    return notify(message, title, 'danger', close, next_act)
 
 
-def warning(message=None, title='提示', close=False):
-    return notify(message, title, 'warning', close)
+def warning(message=None, title='提示', close=False, next_act=None):
+    return notify(message, title, 'warning', close, next_act)
 
 
 
